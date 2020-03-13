@@ -1,0 +1,1 @@
+Данная программа представляет собой реализацию паттерна [Observer](https://github.com/AlexanderGrom/go-patterns/tree/master/Behavioral/Observer).

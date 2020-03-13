@@ -1,0 +1,1 @@
+Данная программа представляет собой реализацию паттерна [Proxy](https://github.com/AlexanderGrom/go-patterns/tree/master/Structural/Proxy).

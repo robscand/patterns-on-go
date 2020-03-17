@@ -15,10 +15,10 @@ func TestAdapter(t *testing.T) {
 	dogHowCat := NewDog(cat)
 	catHowDog := NewCat(dog)
 
-	if catSayResult != dogHowCat.CatMeow() {
-		t.Error("Expect cat and dog says \"meow\".")
+	if catSayResult != dogHowCat.Meow() {
+		t.Error("Expect dog and cat says \"meow\".")
 	}
-	if dogSayResult != catHowDog.DogBark() {
-		t.Error("Expect cat and dog says \"woof\".")
+	if dogSayResult != catHowDog.Bark() {
+		t.Error("Expect dog and cat says \"woof\".")
 	}
 }

@@ -3,13 +3,13 @@
 package adapter_pattern
 
 // Данный интерфейс предоставляет метод мяуканья
-type HowCat interface {
-	CatMeow() string
+type Meower interface {
+	Meow() string
 }
 
 // Данный интерфейс предоставляет собачий лай
-type HowDog interface {
-	DogBark() string
+type Barker interface {
+	Bark() string
 }
 
 // Класс реализует котика
@@ -35,31 +35,31 @@ func (c *Cat) Meow() string {
 }
 
 // Класс-обертка содержит указатель на песеля
-type DogEx struct {
+type DogAdapter struct {
 	*Cat
 }
 
 // Класс-обертка содержит указатель на котейку
-type CatEx struct {
+type CatAdapter struct {
 	*Dog
 }
 
 // Конструкторы для оберток
-func NewDog(c *Cat) HowCat {
-	return &DogEx{c}
+func NewDog(c *Cat) Meower {
+	return &DogAdapter{c}
 }
 
-func NewCat(d *Dog) HowDog {
-	return &CatEx{d}
+func NewCat(d *Dog) Barker {
+	return &CatAdapter{d}
 }
 
 // Методы для обращенных существ
-func (td *DogEx) CatMeow() string {
-	return td.Meow()
+func (td *DogAdapter) Meow() string {
+	return td.Cat.Meow()
 }
 
-func (tc *CatEx) DogBark() string {
-	return tc.Bark()
+func (tc *CatAdapter) Bark() string {
+	return tc.Dog.Bark()
 }
 
 
